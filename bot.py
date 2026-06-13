@@ -1,7 +1,7 @@
 import requests
 from datetime import date
 def get_weather(city="Thiruvananthapuram"):
-    url =f"hhtps://wttr.in/{city}?format=3"
+    url =f"https://wttr.in/{city}?format=3"
     try:
         response=requests.get(url,timeout=10)
         response.raise_for_status()
@@ -15,7 +15,7 @@ def get_quote():
         response.raise_for_status()
         data =response.json()
         quote = data[0]["q"]
-        author= data[q]["a"]
+        author= data[0]["a"]
         return f'"{quote}" - {author}'
     except Exception as e:
         return f"Quote unavailable({e})"
