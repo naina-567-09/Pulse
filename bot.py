@@ -5,7 +5,7 @@ def get_weather(city="Thiruvananthapuram"):
     try:
         response=requests.get(url,timeout=10)
         response.raise_for_status()
-        returm response.text.strip()
+        return response.text.strip()
     except Exception as e
         return f"Weather unavailable({e})"
 def get_quote():
