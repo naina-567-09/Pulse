@@ -16,7 +16,7 @@ def get_quote():
         data =response.json()
         quote = data[0]["q"]
         author= data[q]["a"]
-        returm f'"{quote}" - {author}'
+        return f'"{quote}" - {author}'
     except Exception as e:
         return f"Quote unavailable({e})"
 def build_summary():
